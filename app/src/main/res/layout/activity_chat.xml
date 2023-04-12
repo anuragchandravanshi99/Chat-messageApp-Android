@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ChatActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/background_content_top"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/backview"
+        app:layout_constraintBottom_toTopOf="@id/send"
+        android:layout_marginBottom="@dimen/_10sdp"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_back"
+        android:id="@+id/back"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/textAvailability"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/outline_info_24"
+        android:layout_margin="@dimen/_16sdp"
+        android:id="@+id/info"
+        app:layout_constraintTop_toBottomOf="@id/textAvailability"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="user"
+        android:id="@+id/username"
+        app:layout_constraintLeft_toRightOf="@id/back"
+        app:layout_constraintRight_toLeftOf="@id/info"
+        app:layout_constraintTop_toTopOf="@id/back"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        android:textSize="@dimen/_14ssp"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:textColor="@color/primary_text"
+        android:textAlignment="center"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/recycle"
+        app:stackFromEnd="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/back"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:visibility="invisible"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@id/backview"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Online"
+        android:id="@+id/textAvailability"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:padding="@dimen/_2sdp"
+        android:textAlignment="center"
+        android:background="@color/green"
+        android:textSize="@dimen/_10sdp"
+        />
+    <ProgressBar
+        android:id="@+id/load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="@+id/backview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:id="@+id/send"
+        android:background="@drawable/chat_back"
+        android:src="@drawable/round_send_24"
+        android:padding="@dimen/_8sdp"
+        />
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:id="@+id/inputMessage"
+        app:layout_constraintRight_toLeftOf="@id/send"
+        android:hint="Enter message"
+        android:textSize="@dimen/_13ssp"
+        android:background="@drawable/chat_back"
+        android:textColor="@color/white"
+        android:textColorHint="@color/secondary_text"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
